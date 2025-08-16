@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>
+      Tienda camisetas originales 👕 PAMPLING 👕 - Venta de camisetas de diseño
+    </title>
+    <script src="./main.js" defer></script>
+    <link
+      rel="shortcut icon"
+      href="./assets/icons/favicon.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="menu-left">
+          <label for="burger-menu">
+            <img
+              src="./assets/icons/burger-icon.png"
+              alt="Icono menú tipo burger"
+            />
+          </label>
+          <input type="checkbox" name="burger-menu" id="burger-menu" />
+          <div>
+            <ul class="menu-left-hidden">
+              <li class="dropdown-submenu" id="catalogue-hidden">
+                <label for="catalogue-check">
+                  CATÁLOGO
+                  <img
+                    src="./assets/icons/arrow-icon.svg"
+                    alt="Icono de punta de flecha hacia abajo"
+                  />
+                </label>
+                <input
+                  type="checkbox"
+                  name="catalogue-check"
+                  class="hidden-check"
+                  id="catalogue-check"
+                />
+                <ul class="submenu-hidden" id="catalogue-submenu-hidden">
+                  <li>
+                    <a href="https://www.pampling.com/tienda/catalogo/busqueda"
+                      >Ver todo ></a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.pampling.com/tienda/catalogo/busqueda"
+                      >Novedades</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.pampling.com/tienda/catalogo/busqueda"
+                      >Camisetas</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.pampling.com/tienda/catalogo/busqueda"
+                      >Camisetas Chica</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.pampling.com/tienda/catalogo/busqueda"
+                      >Camisetas Mangas Largas</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.pampling.com/tienda/catalogo/busqueda"
+                      >Camisetas Tirantes</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.pampling.com/tienda/catalogo/busqueda"
+                      >Sudaderas</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.pampling.com/tienda/catalogo/busqueda"
+                      >Calcetines</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.pampling.com/tienda/catalogo/busqueda"
+                      >Pijamas</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.pampling.com/tienda/catalogo/busqueda"
+                      >Boxers</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.pampling.com/tienda/catalogo/busqueda"
+                      >Camisetas KIDS</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.pampling.com/tienda/catalogo/busqueda"
+                      >Sudaderas KIDS</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.pampling.com/tienda/catalogo/busqueda"
+                      >Tarjeta Regalo</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.pampling.com/tienda/catalogo/busqueda"
+                      >Libretas</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.pampling.com/tienda/catalogo/busqueda"
+                      >Bolígrafos</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.pampling.com/tienda/catalogo/busqueda"
+                      >Bañadores</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li id="outlet-hidden">
+                <a
+                  href="https://www.pampling.com/tienda/ofertas/busqueda"
+                  rel="noopener"
+                  id="outlet-color"
+                  >OUTLET</a
+                >
+              </li>
+              <li class="dropdown-submenu" id="designer-hidden">
+                <label for="designer-check">
+                  DISEÑADORES
+                  <img
+                    src="./assets/icons/arrow-icon.svg"
+                    alt="Icono de punta de flecha hacia abajo"
+                  />
+                </label>
+                <input
+                  type="checkbox"
+                  name="designer-check"
+                  class="hidden-check"
+                  id="designer-check"
+                />
+                <ul class="submenu-hidden" id="designer-submenu-hidden">
+                  <li>
+                    <a
+                      href="https://www.pampling.com/concursos/votar-los-disenos"
+                      rel="noopener"
+                      >Vota los diseños</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.pampling.com/concursos/participa"
+                      rel="noopener"
+                      >Envía tu propuesta</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown-submenu" id="community-hidden">
+                <label for="community-check">
+                  COMUNIDAD
+                  <img
+                    src="./assets/icons/arrow-icon.svg"
+                    alt="Icono de punta de flecha hacia abajo"
+                  />
+                </label>
+                <input
+                  type="checkbox"
+                  name="community-check"
+                  class="hidden-check"
+                  id="community-check"
+                />
+                <ul class="submenu-hidden" id="community-submenu-hidden">
+                  <li>
+                    <a href="https://www.pampling.com/news" rel="noopener"
+                      >Blog Pampling</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.pampling.com/comunidad/blog-de-usuarios"
+                      rel="noopener"
+                      >Blog de los usuarios</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.pampling.com/ayuda#camisetas_gratis"
+                      rel="noopener"
+                      >Camiseta gratis</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li id="shop-hidden">
+                <a
+                  href="https://www.pampling.com/tiendas-pampling"
+                  rel="noopener"
+                  >TIENDAS</a
+                >
+              </li>
+              <li class="dropdown-submenu" id="gifts-hidden">
+                <label for="gifts-check">
+                  REGALOS
+                  <img
+                    src="./assets/icons/arrow-icon.svg"
+                    alt="Icono de punta de flecha hacia abajo"
+                  />
+                </label>
+                <input
+                  type="checkbox"
+                  name="gifts-check"
+                  class="hidden-check"
+                  id="gifts-check"
+                />
+                <ul class="submenu-hidden" id="gifts-submenu-hidden">
+                  <li>
+                    <a
+                      href="https://www.pampling.com/es/ideas-regalos"
+                      rel="noopener"
+                      >Ideas regalo</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li id="languages-hidden">
+                IDIOMA
+                <ul class="languages-icon-hidden">
+                  <li>
+                    <a href="./index.html">ES</a>
+                  </li>
+                  <li>
+                    <a href="#">EN</a>
+                  </li>
+                  <li>
+                    <a href="#">FR</a>
+                  </li>
+                  <li>
+                    <a href="#">IT</a>
+                  </li>
+                  <li>
+                    <a href="#">GE</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <h1>
+          <a href="./index.html">
+            <img src="./assets/logo/pampling-logo.svg" alt="Logo de Pampling" />
+          </a>
+        </h1>
+        <div class="menu-center">
+          <ul class="menu">
+            <li id="catalogue">
+              <a href="#" class="arrow-icon">
+                <p>CATÁLOGO</p>
+                <img
+                  src="./assets/icons/arrow-icon.svg"
+                  alt="Icono de punta de flecha hacia abajo"
+                />
+              </a>
+              <div>
+                <div id="catalogue-container">
+                  <p>Ver todo ></p>
+                  <ul id="catalogue-list">
+                    <li>
+                      <a
+                        href="https://www.pampling.com/tienda/catalogo/busqueda"
+                        >Novedades</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.pampling.com/tienda/catalogo/busqueda"
+                        >Camisetas</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.pampling.com/tienda/catalogo/busqueda"
+                        >Camisetas Chica</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.pampling.com/tienda/catalogo/busqueda"
+                        >Camisetas Mangas Largas</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.pampling.com/tienda/catalogo/busqueda"
+                        >Camisetas Tirantes</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.pampling.com/tienda/catalogo/busqueda"
+                        >Sudaderas</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.pampling.com/tienda/catalogo/busqueda"
+                        >Calcetines</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.pampling.com/tienda/catalogo/busqueda"
+                        >Pijamas</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.pampling.com/tienda/catalogo/busqueda"
+                        >Boxers</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.pampling.com/tienda/catalogo/busqueda"
+                        >Camisetas KIDS</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.pampling.com/tienda/catalogo/busqueda"
+                        >Sudaderas KIDS</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.pampling.com/tienda/catalogo/busqueda"
+                        >Tarjeta Regalo</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.pampling.com/tienda/catalogo/busqueda"
+                        >Libretas</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.pampling.com/tienda/catalogo/busqueda"
+                        >Bolígrafos</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.pampling.com/tienda/catalogo/busqueda"
+                        >Bañadores</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a
+                href="https://www.pampling.com/tienda/ofertas/busqueda"
+                rel="noopener"
+                id="outlet-color"
+                >OUTLET</a
+              >
+            </li>
+            <li id="designer">
+              <a
+                href="https://www.pampling.com/concursos/participa"
+                rel="noopener"
+                >DISEÑADORES
+              </a>
+              <div>
+                <ul id="designer-submenu">
+                  <li>
+                    <a
+                      href="https://www.pampling.com/concursos/votar-los-disenos"
+                      rel="noopener"
+                      >Vota los diseños</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.pampling.com/concursos/participa"
+                      rel="noopener"
+                      >Envía tu propuesta</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li id="community">
+              <a href="https://www.pampling.com/news" rel="noopener"
+                >COMUNIDAD</a
+              >
+              <div>
+                <ul id="community-submenu">
+                  <li>
+                    <a href="https://www.pampling.com/news" rel="noopener"
+                      >Blog Pampling</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.pampling.com/comunidad/blog-de-usuarios"
+                      rel="noopener"
+                      >Blog de los usuarios</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.pampling.com/ayuda#camisetas_gratis"
+                      rel="noopener"
+                      >Camiseta gratis</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="https://www.pampling.com/tiendas-pampling" rel="noopener"
+                >TIENDAS</a
+              >
+            </li>
+            <li id="gifts">
+              <a href="https://www.pampling.com/es/ideas-regalos" rel="noopener"
+                >REGALOS</a
+              >
+              <div>
+                <ul id="gifts-submenu">
+                  <li>
+                    <a
+                      href="https://www.pampling.com/es/ideas-regalos"
+                      rel="noopener"
+                      >Ideas regalo</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="menu-rigth">
+          <ul class="menu-right-list">
+            <li id="search-icon">
+              <a href="#">
+                <img src="./assets/icons/search-icon.svg" alt="Logo lupa" />
+              </a>
+            </li>
+            <li id="lang-icon">
+              <label for="lang-check">
+                <p>ES</p>
+                <img
+                  src="./assets/icons/arrow-icon.svg"
+                  alt="Logo punta de flecha"
+                />
+              </label>
+              <input type="checkbox" name="lang-check" id="lang-check" />
+              <div>
+                <ul id="menu-lang">
+                  <li class="item-lang" id="esp-item">
+                    <a href="./index.html">
+                      <img
+                        src="./assets/icons/Languages/es.png"
+                        alt="Bandera de España"
+                      />
+                      <p>Español</p>
+                    </a>
+                  </li>
+                  <li class="item-lang" id="eng-item">
+                    <a href="https://www.pampling.com/" rel="noopener">
+                      <img
+                        src="./assets/icons/Languages/en.png"
+                        alt="Bandera de Reino Unido"
+                      />
+                      <p>Inglés</p>
+                    </a>
+                  </li>
+                  <li class="item-lang" id="fr-item">
+                    <a href="https://www.pampling.com/" rel="noopener">
+                      <img
+                        src="./assets/icons/Languages/fr.png"
+                        alt="Bandera de Francia"
+                      />
+                      <p>Francés</p>
+                    </a>
+                  </li>
+                  <li class="item-lang" id="it-item">
+                    <a href="https://www.pampling.com/" rel="noopener">
+                      <img
+                        src="./assets/icons/Languages/it.png"
+                        alt="Bandera de Italia"
+                      />
+                      <p>Italiano</p>
+                    </a>
+                  </li>
+                  <li class="item-lang" id="ger-item">
+                    <a href="https://www.pampling.com/" rel="noopener">
+                      <img
+                        src="./assets/icons/Languages/ge.png"
+                        alt="Bandera de Alemania"
+                      />
+                      <p>Alemán</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>|</li>
+            <li id="user-icon">
+              <a href="#">
+                <img src="./assets/icons/user-icon.svg" alt="Logo de usuario" />
+              </a>
+            </li>
+            <li>|</li>
+            <li id="fav-icon">
+              <a href="#">
+                <img src="./assets/icons/fav-icon.svg" alt="Logo de favorito" />
+                <span>+</span>
+              </a>
+            </li>
+            <li>|</li>
+            <li id="cart-icon">
+              <a href="#">
+                <img
+                  src="./assets/icons/cart-logo.svg"
+                  alt="Logo de carro de compra"
+                />
+                <span>0</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section id="product-container"></section>
+    </main>
+    <footer>
+      <section class="main-footer">
+        <h2>
+          <a href="./index.html">
+            <img src="./assets/logo/pampling-footer.svg" alt="Logo Pampling" />
+          </a>
+        </h2>
+        <ul class="footer-list">
+          <li>
+            <a
+              href="https://www.pampling.com/ayuda#que_es_pampling"
+              rel="noopener"
+              class="item-style"
+              >¿Qué es Pampling?
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.pampling.com/contacto"
+              rel="noopener"
+              class="item-style"
+              >Contacto
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.pampling.com/ayuda"
+              rel="noopener"
+              class="item-style"
+              >Ayuda
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.pampling.com/contacto/trabaja-con-nosotros"
+              rel="noopener"
+              class="item-style"
+              >Trabaja con nosotros
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.pampling.com/propiedad-intelectual"
+              rel="noopener"
+              class="item-style"
+              >Propiedad intelectual - Canal de denuncias
+            </a>
+          </li>
+        </ul>
+        <div class="main-footer-social">
+          <a href="https://www.instagram.com/pamplingnews/#" rel="noopener">
+            <img
+              src="./assets/icons/social-icon/ig-icon.png"
+              alt="Icono de Instagram"
+            />
+          </a>
+          <a href="https://www.facebook.com/pampling" rel="noopener">
+            <img
+              src="./assets/icons/social-icon/facebook-icon.png"
+              alt="Icono de Facebook"
+            />
+          </a>
+          <a href="https://x.com/pamplingnews" rel="noopener">
+            <img src="./assets/icons/social-icon/x-icon.png" alt="Icono de X" />
+          </a>
+          <a href="https://www.tiktok.com/@pamplingnews" rel="noopener">
+            <img
+              src="./assets/icons/social-icon/tiktok-icon.png"
+              alt="Icono de Tiktok"
+            />
+          </a>
+        </div>
+      </section>
+      <section class="designer-footer">
+        <h3 class="footer-tittle">DISEÑADORES</h3>
+        <ul class="footer-list">
+          <li>
+            <a
+              href="https://www.pampling.com/concursos/votar-los-disenos"
+              rel="noopener"
+              class="item-style"
+              >Vota los diseños</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.pampling.com/concursos/votar-los-disenos"
+              rel="noopener"
+              class="item-style"
+              >Envía tu propuesta</a
+            >
+          </li>
+        </ul>
+      </section>
+      <section class="community-footer">
+        <h3 class="footer-tittle">COMUNIDAD</h3>
+        <ul class="footer-list">
+          <li>
+            <a
+              href="https://www.pampling.com/news"
+              rel="noopener"
+              class="item-style"
+              >Blog Pampling</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.pampling.com/comunidad/blog-de-usuarios"
+              rel="noopener"
+              class="item-style"
+              >Blog de los usuarios</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.pampling.com/ayuda#camisetas_gratis"
+              rel="noopener"
+              class="item-style"
+              >Camisetas gratis</a
+            >
+          </li>
+        </ul>
+      </section>
+      <section class="policies-footer">
+        <p>
+          ® 2005-2025
+          <a href="./index.html">pampling.com</a>
+          - todos los derechos reservados |
+          <a href="https://www.pampling.com/privacidad" rel="noopener"
+            >Política de privacidad</a
+          >
+          |
+          <a href="https://www.pampling.com/aviso-legal" rel="noopener"
+            >Aviso legal</a
+          >
+          |
+          <a href="https://www.pampling.com/politica-cookies" rel="noopener"
+            >Política de cookies</a
+          >
+          |
+          <a href="https://www.pampling.com/politica-cookies" rel="noopener"
+            >Condiciones de venta</a
+          >
+        </p>
+      </section>
+    </footer>
+  </body>
+</html>
