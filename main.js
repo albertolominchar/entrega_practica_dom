@@ -1,4 +1,10 @@
-//Crear galeria de productos
+//CREAR H2 DE LA PÁGINA
+const titlePage = document.getElementById('title-page')
+const h2Shirt = document.createElement('h2')
+h2Shirt.textContent = 'CAMISETAS'
+titlePage.appendChild(h2Shirt)
+
+//CREAR GALERIA DE PRODUCTOS
 const products = [
   {
     name: 'Killer Bueno',
@@ -58,8 +64,8 @@ const products = [
     name: 'Van Gone',
     oldPrice: 14.99,
     price: 11.99,
-    type: 'girl tshirt',
-    color: 'yellow',
+    type: 'tank tshirt',
+    color: 'white',
     image: 'https://statics.pampling.com/imagenes/productos/producto_13439.jpg',
     page: 'https://www.pampling.com/productos/es/9302-Van-Gone'
   },
@@ -112,41 +118,36 @@ const products = [
 
 const container = document.getElementById('product-container')
 
+// Crear cartas de productos
 products.forEach((product) => {
-  // Crear el contenedor principal
   const shirtCard = document.createElement('div')
   shirtCard.className = 'shirt-card'
+  shirtCard.dataset.type = product.type
 
-  // Enlace de la imagen
   const link = document.createElement('a')
   link.href = product.page
   link.rel = 'noopener'
 
-  // Imagen del producto
   const img = document.createElement('img')
   img.src = product.image
   img.alt = product.name
   link.appendChild(img)
 
-  // Nombre del producto
   const title = document.createElement('p')
   title.textContent = product.name
 
-  // Contenedor de precios
   const priceCard = document.createElement('div')
   priceCard.className = 'price-card'
 
-  // Precio original
   let oldPrice = null
   if (product.oldPrice > product.price) {
     oldPrice = document.createElement('del')
     oldPrice.textContent = `${product.oldPrice.toFixed(2)} €`
   }
-  // Precio rebajado
+
   const newPrice = document.createElement('span')
   newPrice.textContent = `${product.price.toFixed(2)} €`
 
-  // Icono de favorito
   const favLink = document.createElement('a')
   favLink.href = '#'
 
@@ -160,14 +161,12 @@ products.forEach((product) => {
   likeCard.appendChild(favIcon)
   favLink.appendChild(likeCard)
 
-  // Añadir precios e icono al contenedor de precios
   if (oldPrice) {
     priceCard.appendChild(oldPrice)
   }
   priceCard.appendChild(newPrice)
   priceCard.appendChild(favLink)
 
-  // Botón de añadir al carrito
   const addButton = document.createElement('a')
   addButton.href = '#'
   addButton.className = 'add-button'
@@ -176,47 +175,32 @@ products.forEach((product) => {
   addText.textContent = 'Añadir al carrito'
   addButton.appendChild(addText)
 
-  // Ensamblar la tarjeta
   shirtCard.appendChild(link)
   shirtCard.appendChild(title)
   shirtCard.appendChild(priceCard)
   shirtCard.appendChild(addButton)
 
-  // Insertar en el DOM
   container.appendChild(shirtCard)
 })
 
-//Crear filtro
+// FILTROS
+
 const deskFilter = document.getElementById('desktop-filter')
 
-const h2Desk = document.createElement('h2')
-h2Desk.textContent = 'FILTROS'
-deskFilter.appendChild(h2Desk)
+const h3Desk = document.createElement('h3')
+h3Desk.textContent = 'FILTROS'
+deskFilter.appendChild(h3Desk)
 
-const typeFilter = document.createElement('div')
-typeFilter.className = 'type-Filter'
-deskFilter.appendChild(typeFilter)
-const titleType = document.createElement('h3')
-titleType.textContent = 'Tipo de producto'
-typeFilter.appendChild(titleType)
+// Botón limpiar filtros
+const resetButton = document.createElement('button')
+resetButton.textContent = 'Limpiar filtros'
+resetButton.id = 'reset-filters'
+deskFilter.appendChild(resetButton)
 
-const typeList = document.createElement('ul')
-typeList.className = 'type-list'
-typeFilter.appendChild(typeList)
-/*
-const li1 = document.createElement('li')
-li1.className = 'type'
-typeList.appendChild(li1)
-const input1 = document.createElement('input')
-input1.type = 'checkbox'
-input1.id = 'input1'
-input1.name = 'Camiseta'
-const label1 = document.createElement('label')
-label1.htmlFor = 'Camiseta'
-label1.textContent = 'Camisetas'
-
-li1.appendChild(input1)
-li1.appendChild(label1)
+// Filtro por tipo
+const h4type = document.createElement('h4')
+h4type.textContent = 'Tipo de producto'
+deskFilter.appendChild(h4type)
 
 const types = [
   'Camisetas',
@@ -225,17 +209,175 @@ const types = [
   'Camisetas Tirantes'
 ]
 
-for (const type of types) {
+const filterList = document.createElement('ul')
+filterList.id = 'type-filter-list'
+deskFilter.appendChild(filterList)
+
+types.forEach((type) => {
   const li = document.createElement('li')
-  typeList.appendChild(li)
-  const a = document.createElement('a')
-  li.appendChild(a)
-  const div = document.createElement('div')
-  div.className = 'boxType'
-  const p = document.createElement('p')
-  p.className = 'textType'
-  p.textContent = type
-  a.appendChild(div)
-  a.appendChild(p)
+  filterList.appendChild(li)
+
+  const id = type.toLowerCase().replace(/\s+/g, '-')
+  const input = document.createElement('input')
+  input.type = 'checkbox'
+  input.id = id
+  input.name = id
+  li.appendChild(input)
+
+  const label = document.createElement('label')
+  label.htmlFor = id
+  label.textContent = type
+  li.appendChild(label)
+})
+
+// Filtro por precio
+const h4Price = document.createElement('h4')
+h4Price.textContent = 'Precio'
+deskFilter.appendChild(h4Price)
+
+const prices = ['De 0€ a 10€', 'De 10€ a 20€', 'Más de 20€']
+
+const priceList = document.createElement('ul')
+priceList.id = 'price-list'
+deskFilter.appendChild(priceList)
+
+prices.forEach((price) => {
+  const id = price.toLowerCase().replace(/\s+/g, '-')
+
+  const li = document.createElement('li')
+  priceList.appendChild(li)
+
+  const input = document.createElement('input')
+  input.type = 'checkbox'
+  input.id = id
+  input.name = id
+  li.appendChild(input)
+
+  const label = document.createElement('label')
+  label.htmlFor = id
+  label.textContent = price
+  li.appendChild(label)
+})
+
+//Filtro por color
+const h4Color = document.createElement('h4')
+h4Color.textContent = 'Color'
+deskFilter.appendChild(h4Color)
+
+const colors = [
+  'Blanco',
+  'Negro',
+  'Gris',
+  'Amarillo',
+  'Naranja',
+  'Rojo',
+  'Verde'
+]
+
+const colorList = document.createElement('ul')
+colorList.id = 'color-list'
+deskFilter.appendChild(colorList)
+
+colors.forEach((color) => {
+  const id = color.toLowerCase().replace(/\s+/g, '-')
+
+  const li = document.createElement('li')
+  colorList.appendChild(li)
+
+  const input = document.createElement('input')
+  input.type = 'checkbox'
+  input.id = id
+  input.name = id
+  li.appendChild(input)
+
+  const label = document.createElement('label')
+  label.htmlFor = id
+  label.textContent = color
+  li.appendChild(label)
+})
+
+// FILTRADO PRODUCTOS
+
+// Mapeo tipos y colores
+const typeMap = {
+  Camisetas: 'tshirt',
+  'Camisetas Chica': 'girl tshirt',
+  'Camisetas Manga Larga': 'long-sleeve tshirt',
+  'Camisetas Tirantes': 'tank tshirt'
 }
-*/
+const colorMap = {
+  Blanco: 'white',
+  Negro: 'black',
+  Gris: 'grey',
+  Amarillo: 'yellow',
+  Naranja: 'orange',
+  Rojo: 'red',
+  Verde: 'green'
+}
+//Funcion filtrado
+const filterProducts = () => {
+  const selectedTypeCheckboxes = Array.from(
+    document.querySelectorAll(
+      '#type-filter-list input[type="checkbox"]:checked'
+    )
+  )
+  const selectedPriceCheckboxes = Array.from(
+    document.querySelectorAll('#price-list input[type="checkbox"]:checked')
+  )
+  const selectedColorCheckboxes = Array.from(
+    document.querySelectorAll('#color-list input[type="checkbox"]:checked')
+  )
+
+  const selectedTypes = selectedTypeCheckboxes.map(
+    (checkbox) => typeMap[checkbox.labels[0].textContent]
+  )
+  const selectedPriceRanges = selectedPriceCheckboxes.map(
+    (checkbox) => checkbox.labels[0].textContent
+  )
+  const selectedColors = selectedColorCheckboxes.map(
+    (checkbox) => colorMap[checkbox.labels[0].textContent]
+  )
+
+  document.querySelectorAll('.shirt-card').forEach((card) => {
+    const cardType = card.dataset.type
+    const product = products.find(
+      (p) => p.name === card.querySelector('p').textContent
+    )
+    const price = product.price
+    const color = product.color
+
+    // Verificar tipo
+    const matchesType =
+      selectedTypes.length === 0 || selectedTypes.includes(cardType)
+
+    // Verificar precio
+    const matchesPrice =
+      selectedPriceRanges.length === 0 ||
+      selectedPriceRanges.some((range) => {
+        if (range === 'De 0€ a 10€') return price >= 0 && price <= 10
+        if (range === 'De 10€ a 20€') return price > 10 && price <= 20
+        if (range === 'Más de 20€') return price > 20
+        return false
+      })
+
+    // Verificar color
+    const matchesColor =
+      selectedColors.length === 0 || selectedColors.includes(color)
+
+    const shouldShow = matchesType && matchesPrice && matchesColor
+    card.style.display = shouldShow ? 'block' : 'none'
+  })
+}
+document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+  checkbox.addEventListener('change', filterProducts)
+})
+
+//Funcionalidad boton Limpiar filtros
+resetButton.addEventListener('click', () => {
+  document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+    checkbox.checked = false
+  })
+  document.querySelectorAll('.shirt-card').forEach((card) => {
+    card.style.display = 'block'
+  })
+})

@@ -59,7 +59,7 @@ nav {
   font-size: 14px;
   font-weight: 500;
   color: var(--primary-color);
-  padding: 10px 20px;
+  padding: 10px 20px 0px 20px;
   position: relative;
 }
 /* MENU-IZQUIERDA */
@@ -520,29 +520,92 @@ label {
 /* MAIN */
 main {
   display: flex;
+  flex-direction: column;
+  margin: 50px 0px;
 }
-
+#title-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100px;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  font-family: 'Barlow Condensed', Helvetica;
+  font-weight: 500;
+}
+#products-page {
+  display: flex;
+  margin-top: 50px;
+}
 #desktop-filter {
-  width: 20vw;
-  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  margin-left: 40px;
+  gap: 25px;
 }
-#desktop-filter > h2 {
+#desktop-filter > h3 {
   font-size: 24px;
   font-family: 'Barlow Condensed', Helvetica;
   font-weight: 600;
 }
-.type-list > li > a {
+#reset-filters {
+  width: 50%;
+  padding: 10px;
+  color: white;
+  font-size: 14px;
+  font-family: 'Poppins', Helvetica;
+  font-weight: 600;
+  border-radius: 15px;
+  background-color: black;
+}
+#desktop-filter > h4 {
+  font-size: 16px;
+  font-family: 'Poppins', Helvetica;
+  font-weight: 500;
+  color: #555555;
+}
+#desktop-filter > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+#desktop-filter > ul > li {
   display: flex;
   align-items: center;
-  gap: 5px;
 }
-.boxType {
-  width: 10px;
-  height: 10px;
-  background-color: white;
+#desktop-filter > ul > li > label {
+  width: 100%;
+  margin-left: 5px;
+  font-size: 14px;
+  font-family: 'Poppins', Helvetica;
+  justify-content: flex-start;
+  color: #212529;
+  line-height: 20px;
+}
+#desktop-filter > ul > li > label:hover {
+  color: black;
+  font-weight: 600;
+  text-decoration: underline;
+}
+#desktop-filter > ul > li > input {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background-color: #fff;
+}
+#desktop-filter > ul > li > input:checked {
+  background-color: #f92b89;
+}
+#desktop-filter > ul > li > input:checked + label {
+  font-weight: 600;
 }
 #product-container {
-  width: 80vw;
+  width: 75vw;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -554,6 +617,7 @@ main {
 }
 .shirt-card img {
   width: 100%;
+  height: 360px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -588,14 +652,15 @@ main {
   padding: 3px 7px;
   border-radius: 50%;
 }
-.like-card img {
+.like-card > img {
   width: 15px;
+  height: 15px;
   vertical-align: middle;
 }
 .add-button {
   background-color: var(--primary-color);
   position: absolute;
-  bottom: 30%;
+  top: 275px;
   left: 15%;
   width: 70%;
   text-align: center;
