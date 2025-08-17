@@ -769,20 +769,7 @@ footer {
   h1 {
     margin: auto;
   }
-  .featured {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-  .featured a {
-    width: 500px;
-  }
-  .trust-pilot img {
-    width: 60%;
-  }
-  #main-graphics-text > h2 {
-    font-size: 35px;
-  }
+
   .shirt-card p {
     font-size: 20px;
   }
@@ -823,6 +810,22 @@ footer {
     width: 100vw;
     max-width: 400px;
   }
+  #desktop-filter {
+    display: none;
+  }
+  #product-container {
+    width: 100vw;
+    flex-direction: column;
+    gap: 8px;
+    margin: 15px;
+  }
+  .shirt-card {
+    width: 100%;
+  }
+  .shirt-card img {
+    height: auto;
+  }
+  /*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
   footer {
     display: flex;
     flex-wrap: wrap;
