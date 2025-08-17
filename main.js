@@ -1,3 +1,4 @@
+//Crear galeria de productos
 const products = [
   {
     name: 'Killer Bueno',
@@ -136,8 +137,11 @@ products.forEach((product) => {
   priceCard.className = 'price-card'
 
   // Precio original
-  const oldPrice = document.createElement('del')
-  oldPrice.textContent = `${product.oldPrice.toFixed(2)} €`
+  let oldPrice = null
+  if (product.oldPrice > product.price) {
+    oldPrice = document.createElement('del')
+    oldPrice.textContent = `${product.oldPrice.toFixed(2)} €`
+  }
   // Precio rebajado
   const newPrice = document.createElement('span')
   newPrice.textContent = `${product.price.toFixed(2)} €`
@@ -157,7 +161,9 @@ products.forEach((product) => {
   favLink.appendChild(likeCard)
 
   // Añadir precios e icono al contenedor de precios
-  priceCard.appendChild(oldPrice)
+  if (oldPrice) {
+    priceCard.appendChild(oldPrice)
+  }
   priceCard.appendChild(newPrice)
   priceCard.appendChild(favLink)
 
@@ -179,3 +185,57 @@ products.forEach((product) => {
   // Insertar en el DOM
   container.appendChild(shirtCard)
 })
+
+//Crear filtro
+const deskFilter = document.getElementById('desktop-filter')
+
+const h2Desk = document.createElement('h2')
+h2Desk.textContent = 'FILTROS'
+deskFilter.appendChild(h2Desk)
+
+const typeFilter = document.createElement('div')
+typeFilter.className = 'type-Filter'
+deskFilter.appendChild(typeFilter)
+const titleType = document.createElement('h3')
+titleType.textContent = 'Tipo de producto'
+typeFilter.appendChild(titleType)
+
+const typeList = document.createElement('ul')
+typeList.className = 'type-list'
+typeFilter.appendChild(typeList)
+/*
+const li1 = document.createElement('li')
+li1.className = 'type'
+typeList.appendChild(li1)
+const input1 = document.createElement('input')
+input1.type = 'checkbox'
+input1.id = 'input1'
+input1.name = 'Camiseta'
+const label1 = document.createElement('label')
+label1.htmlFor = 'Camiseta'
+label1.textContent = 'Camisetas'
+
+li1.appendChild(input1)
+li1.appendChild(label1)
+
+const types = [
+  'Camisetas',
+  'Camisetas Chica',
+  'Camisetas Manga Larga',
+  'Camisetas Tirantes'
+]
+
+for (const type of types) {
+  const li = document.createElement('li')
+  typeList.appendChild(li)
+  const a = document.createElement('a')
+  li.appendChild(a)
+  const div = document.createElement('div')
+  div.className = 'boxType'
+  const p = document.createElement('p')
+  p.className = 'textType'
+  p.textContent = type
+  a.appendChild(div)
+  a.appendChild(p)
+}
+*/

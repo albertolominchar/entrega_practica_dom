@@ -284,6 +284,7 @@ h1 > img {
 #catalogue:hover > div {
   visibility: visible;
   animation: top-entry-catalogue 0.3s ease-out;
+  z-index: 10;
 }
 #catalogue > div:hover {
   visibility: visible;
@@ -305,6 +306,7 @@ h1 > img {
 #designer:hover > div {
   visibility: visible;
   animation: top-entry 0.4s ease;
+  z-index: 10;
 }
 #designer > div:hover {
   visibility: visible;
@@ -337,6 +339,7 @@ h1 > img {
 #community:hover > div {
   visibility: visible;
   animation: top-entry 0.4s ease;
+  z-index: 10;
 }
 #community > div:hover {
   visibility: visible;
@@ -368,6 +371,7 @@ h1 > img {
 #gifts:hover > div {
   visibility: visible;
   animation: top-entry 0.4s ease;
+  z-index: 10;
 }
 #gifts > div:hover {
   visibility: visible;
@@ -514,12 +518,34 @@ label {
   right: -5px;
 }
 /* MAIN */
+main {
+  display: flex;
+}
+
+#desktop-filter {
+  width: 20vw;
+  background-color: grey;
+}
+#desktop-filter > h2 {
+  font-size: 24px;
+  font-family: 'Barlow Condensed', Helvetica;
+  font-weight: 600;
+}
+.type-list > li > a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.boxType {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+}
 #product-container {
   width: 80vw;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  z-index: -100;
 }
 .shirt-card {
   width: 32%;
