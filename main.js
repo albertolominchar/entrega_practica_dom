@@ -399,14 +399,15 @@ document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
 })
 
 //Funcionalidad boton Limpiar filtros
-resetButton.addEventListener('click', () => {
+const resetFilters = () => {
   document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
     checkbox.checked = false
   })
   document.querySelectorAll('.shirt-card').forEach((card) => {
     card.style.display = 'block'
   })
-})
+}
+resetButton.addEventListener('click', resetFilters)
 
 //MOBILE-FILTERS
 
@@ -432,12 +433,5 @@ resetMobile.id = 'reset-mobile'
 resetMobile.className = 'filter-button'
 mobileFilter.appendChild(resetMobile)
 
-// Función botón "Limpiar filtros"
-resetMobile.addEventListener('click', () => {
-  document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
-    checkbox.checked = false
-  })
-  document.querySelectorAll('.shirt-card').forEach((card) => {
-    card.style.display = 'block'
-  })
-})
+// Llamar funcion resetFilters para versión mobile
+resetMobile.addEventListener('click', resetFilters)
