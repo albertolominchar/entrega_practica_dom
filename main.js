@@ -1,8 +1,35 @@
-//CREAR H2 DE LA PÁGINA
-const titlePage = document.getElementById('title-page')
+// CREACION ESTRUCTURA HTML DEL MAIN
+const main = document.querySelector('main')
+
+const titlePage = document.createElement('div')
+titlePage.id = 'title-page'
+main.appendChild(titlePage)
+
 const h2Shirt = document.createElement('h2')
 h2Shirt.textContent = 'CAMISETAS'
 titlePage.appendChild(h2Shirt)
+
+const productsPage = document.createElement('div')
+productsPage.id = 'products-page'
+main.appendChild(productsPage)
+
+const mobileFilter = document.createElement('section')
+mobileFilter.id = 'mobile-filter'
+productsPage.appendChild(mobileFilter)
+
+const filterButton = document.createElement('button')
+filterButton.id = 'filter-button'
+filterButton.className = 'filter-button'
+filterButton.textContent = 'Filtros'
+mobileFilter.appendChild(filterButton)
+
+const deskFilter = document.createElement('section')
+deskFilter.id = 'desktop-filter'
+productsPage.appendChild(deskFilter)
+
+const productContainer = document.createElement('section')
+productContainer.id = 'product-container'
+productsPage.appendChild(productContainer)
 
 //CREAR GALERIA DE PRODUCTOS
 const products = [
@@ -183,9 +210,7 @@ products.forEach((product) => {
   container.appendChild(shirtCard)
 })
 
-// FILTROS
-
-const deskFilter = document.getElementById('desktop-filter')
+// DESKTOP-FILTERS
 
 const h3Desk = document.createElement('h3')
 h3Desk.textContent = 'FILTROS'
@@ -195,6 +220,7 @@ deskFilter.appendChild(h3Desk)
 const resetButton = document.createElement('button')
 resetButton.textContent = 'Limpiar filtros'
 resetButton.id = 'reset-filters'
+resetButton.className = 'reset-btn'
 deskFilter.appendChild(resetButton)
 
 // Filtro por tipo
@@ -374,6 +400,40 @@ document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
 
 //Funcionalidad boton Limpiar filtros
 resetButton.addEventListener('click', () => {
+  document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+    checkbox.checked = false
+  })
+  document.querySelectorAll('.shirt-card').forEach((card) => {
+    card.style.display = 'block'
+  })
+})
+
+//MOBILE-FILTERS
+
+// Mostrar/ocultar filtros y botón de reset
+filterButton.addEventListener('click', () => {
+  if (deskFilter.style.display === 'none' || deskFilter.style.display === '') {
+    deskFilter.style.display = 'flex'
+    resetMobile.style.display = 'flex'
+    resetButton.style.display = 'none'
+    filterButton.textContent = 'Validar'
+  } else {
+    deskFilter.style.display = 'none'
+    resetMobile.style.display = 'none'
+    resetButton.style.display = 'flex'
+    filterButton.textContent = 'Filtros'
+  }
+})
+
+// Crear botón "Limpiar filtros"
+const resetMobile = document.createElement('button')
+resetMobile.textContent = 'Limpiar'
+resetMobile.id = 'reset-mobile'
+resetMobile.className = 'filter-button'
+mobileFilter.appendChild(resetMobile)
+
+// Función botón "Limpiar filtros"
+resetMobile.addEventListener('click', () => {
   document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
     checkbox.checked = false
   })
