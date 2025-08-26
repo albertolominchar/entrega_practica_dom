@@ -31,6 +31,14 @@ const productContainer = document.createElement('section')
 productContainer.id = 'product-container'
 productsPage.appendChild(productContainer)
 
+// Añadir mensaje de "No hay resultados""
+const noResultsMessage = document.createElement('div')
+noResultsMessage.id = 'no-results-message'
+noResultsMessage.textContent =
+  'No se ha encontrado ningún resultado para los filtros indicados'
+noResultsMessage.style.display = 'none'
+productsPage.appendChild(noResultsMessage)
+
 //CREAR GALERIA DE PRODUCTOS
 const products = [
   {
@@ -364,6 +372,9 @@ const filterProducts = () => {
     (checkbox) => colorMap[checkbox.labels[0].textContent]
   )
 
+  // Contador para verificar cuántas tarjetas se muestran
+  let visibleProductsCount = 0
+
   document.querySelectorAll('.shirt-card').forEach((card) => {
     const cardType = card.dataset.type
     const product = products.find(
@@ -392,7 +403,21 @@ const filterProducts = () => {
 
     const shouldShow = matchesType && matchesPrice && matchesColor
     card.style.display = shouldShow ? 'block' : 'none'
+
+    if (shouldShow) {
+      visibleProductsCount++
+    }
   })
+
+  // Mostrar u ocultar el mensaje de no resultados
+  const noResultsDiv = document.getElementById('no-results-message')
+  if (visibleProductsCount === 0) {
+    noResultsDiv.style.display = 'flex'
+    container.style.display = 'none'
+  } else {
+    noResultsDiv.style.display = 'none'
+    container.style.display = 'flex'
+  }
 }
 document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
   checkbox.addEventListener('change', filterProducts)
@@ -406,6 +431,9 @@ const resetFilters = () => {
   document.querySelectorAll('.shirt-card').forEach((card) => {
     card.style.display = 'block'
   })
+  // Ocultar el mensaje de no resultados al limpiar los filtros
+  document.getElementById('no-results-message').style.display = 'none'
+  container.style.display = 'flex'
 }
 resetButton.addEventListener('click', resetFilters)
 
